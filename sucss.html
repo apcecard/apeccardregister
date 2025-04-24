@@ -111,14 +111,6 @@
     const currentDate = new Date();
     const formattedDate = currentDate.toLocaleString(); // Formats to a locale-specific string (e.g., '15/01/1990 16:42')
 
-    // Update the text in the transaction date paragraph
-    document.getElementById("transaction-date").textContent = "Transaction date: " + formattedDate;
-
-    // Delay for 2 seconds (optional) before redirecting to the homepage
-    setTimeout(function() {
-        // Redirect to the homepage or another page
-        window.location.href = "register.html"; // Replace with your desired URL or path
-    }, 2000); // 2000ms = 2 seconds
 }
 
 </script>
