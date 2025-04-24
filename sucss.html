@@ -8,83 +8,74 @@
 </head>
 <style>
     body {
-    font-family: Arial, sans-serif;
-    background-image: url('https://www.jsccib.org/upload/images/2025/04/%E0%B8%94%E0%B8%B5%E0%B9%84%E0%B8%8B%E0%B8%99%E0%B9%8C%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%B1%E0%B8%87%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%95%E0%B8%B1%E0%B9%89%E0%B8%87%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD%20(10).jpg');
-    background-size: cover;
-    background-position: center;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        font-family: Arial, sans-serif;
+        background-image: url('https://www.jsccib.org/upload/images/2025/04/%E0%B8%94%E0%B8%B5%E0%B8%99%E0%B8%B5%E0%B8%8B%E0%B8%99%E0%B8%B5%E0%B8%97%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B8%AB%E0%B8%A1%E0%B8%A1%E0%B8%9A.jpg');
+        background-size: cover;
+        background-position: center;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
 
-.modal {
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    width: 400px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+    .modal {
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        width: 400px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
 
-.modal-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+    .modal-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
-.icon img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 15px;
-}
+    .icon img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 15px;
+    }
 
-.message {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
+    .message {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
 
-.date {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 20px;
-}
+    .date {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 20px;
+    }
 
-.btn-ok {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
+    .btn-ok {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
 
-.btn-ok:hover {
-    background-color: #45a049;
-}
+    .btn-ok:hover {
+        background-color: #45a049;
+    }
 
 </style>
-<body>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Success</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
 <body>
     <div class="container">
         <div class="modal">
@@ -99,19 +90,21 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        function showDate() {
+            // Get the current date and time
+            const currentDate = new Date();
+            const formattedDate = currentDate.toLocaleString(); // Formats to a locale-specific string (e.g., '15/01/1990 16:42')
+
+            // Update the text in the transaction date paragraph
+            document.getElementById("transaction-date").textContent = "Transaction date: " + formattedDate;
+
+            // Delay for 2 seconds (optional) before redirecting to the homepage
+            setTimeout(function() {
+                // Redirect to the homepage or another page
+                window.location.href = "register.html"; // Replace with your desired URL or path
+            }, 2000); // 2000ms = 2 seconds
+        }
+    </script>
 </body>
-</html>
-
-    <script src="script.js"></script>
-</body>
-<script>
-   function showDate() {
-    // Get the current date and time
-    const currentDate = new Date();
-    const formattedDate = currentDate.toLocaleString(); 
-
-}
-
-</script>
 </html>
