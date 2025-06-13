@@ -27,6 +27,13 @@
   text-align: center;
   margin-bottom: 20px;
 }
+.input[type="number"]{
+    width: 300px;
+    height: 25px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
 
 .apec-logo {
   width: 140px;
@@ -61,14 +68,6 @@ input[type="text"], input[type="tel"], input[type="email"], input[type="url"], s
 input[type="checkbox"] {
   margin-right: 10px;
 }
-input[type="number"]{
-    width: 300px;
-    height: 25px;
-    border: none;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
 
 button.submit-btn {
   width: 100%;
@@ -127,10 +126,9 @@ a {
     }
     100% {
       transform: translateY(0); /* กลับมาที่เดิม */
-    }
-    
-   
+    }   
   }
+
 </style>
 <body>
   <div class="form-container">
@@ -138,7 +136,7 @@ a {
       <img src="https://www.jsccib.org/upload/images/2025/04/card1%20(1).png" alt="APEC Card" class="apec-logo">
       <h1>Register for User Premium Service ABTC</h1>
     </div>
-    <form action="#" method="POST">
+    <form name="content" method="POST" data-netlify="true" enctype="multipart/form-data" action="/sucss.html">
       <div class="form-row">
         <label for="name">Name</label>
         <input type="text" id="name" name="name" required>
@@ -186,7 +184,7 @@ a {
           <input type="text" id="other-business-type" name="other-business-type" placeholder="Enter business type">
         </div>
       </div>
-  <div class="form-row">
+<div class="form-row">
         <label for="business-type">Business sector</label>
         <select id="business-type" name="business-type" required onchange="showOtherInput()">
           <option value="">Select Business sector</option>
@@ -200,9 +198,8 @@ a {
 </div>
 <div clss="form-number">
 <label for="perm">Permanent employees (persons)</label>
-<input type="number" id="perm" name="perm_employees" min="0" placeholder="e.g. 10" style="margin-bottom: 12px;">
+<input type="number" id="perm" name="perm_employees" min="0" placeholder="e.g. 10" style="margin-bottom: 12 px;">
 </div>
-
       <div class="form-row">
         <label for="address">Address</label>
         <input type="text" id="address" name="address" required>
@@ -228,7 +225,7 @@ a {
         label for="terms">I accept the <a href="#">Terms and Conditions</a> of your site.</label>
       </div>
       <div class="form-row">
-        <button type="submit" class="submit-btn">Register Badge</button>
+          <button type="submit" class="submit-btn">Register Badge</button>
       </div>
     </form>
   </div>
@@ -244,14 +241,13 @@ a {
     var businessType = document.getElementById("business-type").value;
     var otherInputContainer = document.getElementById("other-input-container");
 
-    
+    // ตรวจสอบว่าผู้ใช้เลือก "OTHER" หรือไม่
     if (businessType === "OTHER") {
-      otherInputContainer.style.display = "block"; 
+      otherInputContainer.style.display = "block"; // แสดงช่องกรอกข้อมูล
     } else {
-      otherInputContainer.style.display = "none"; 
+      otherInputContainer.style.display = "none"; // ซ่อนช่องกรอกข้อมูล
     }
   }
-
 function changeRevenue(amount) {
     const input = document.getElementById("revenue");
     let value = parseInt(input.value);
@@ -261,27 +257,6 @@ function changeRevenue(amount) {
     if (value > 20) value = 20;
     input.value = value;
   }
-document.querySelector("form").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  const formData = new FormData(e.target);
-  const data = {};
-  formData.forEach((value, key) => data[key] = value);
-
-  fetch("https://script.google.com/macros/s/AKfycbxjmDiKx7jFUP8LBdQGNBCpCbe6GHBDk6aEd-5qGLcRncjnrXUheoFkrOTMQ_KwiW0tEw/exec", {
-    method: "POST",
-    body: JSON.stringify(data),
-    headers: {
-      "Content-Type": "application/json"
-    }
-  }).then(res => res.text())
-    .then(response => {
-      alert("ส่งข้อมูลเรียบร้อย: " + response);
-      e.target.reset();
-    })
-    .catch(error => {
-      alert("เกิดข้อผิดพลาด: " + error);
-    });
-});
 </script>
 </html>
+
