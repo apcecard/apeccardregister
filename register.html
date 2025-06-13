@@ -261,5 +261,27 @@ function changeRevenue(amount) {
     if (value > 20) value = 20;
     input.value = value;
   }
+document.querySelector("form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const formData = new FormData(e.target);
+  const data = {};
+  formData.forEach((value, key) => data[key] = value);
+
+  fetch("https://script.google.com/macros/s/AKfycbxjmDiKx7jFUP8LBdQGNBCpCbe6GHBDk6aEd-5qGLcRncjnrXUheoFkrOTMQ_KwiW0tEw/exec", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  }).then(res => res.text())
+    .then(response => {
+      alert("ส่งข้อมูลเรียบร้อย: " + response);
+      e.target.reset();
+    })
+    .catch(error => {
+      alert("เกิดข้อผิดพลาด: " + error);
+    });
+});
 </script>
 </html>
